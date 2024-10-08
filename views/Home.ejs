@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle History Card</title>
+
+    <style>
+        /* General Page Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        h2,
+        h3 {
+            margin: 5px;
+            padding: 0;
+            color: #1f4f82;
+            /* Blue color similar to the image */
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #1f4f82;
+            /* Blue border to match the card */
+            padding: 8px;
+            text-align: left;
+        }
+
+        /* Table header styles */
+        th {
+            background-color: #eaf2f8;
+            /* Light blue background for headers */
+            text-align: center;
+            font-weight: bold;
+            color: #1f4f82;
+            /* Blue font for header */
+        }
+
+        /* Row styles */
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Input Styles */
+        input[type="text"],
+        select,
+        input[type="date"] {
+            width: 100%;
+            padding: 6px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Special Styles for Dropdowns */
+        select {
+            font-size: 14px;
+        }
+
+        /* Aligning dropdowns in tables */
+        td select {
+            width: 90%;
+            /* Adjusting width inside table cells */
+        }
+
+        /* Larger table for detailed information */
+        table th[colspan="15"],
+        table td[colspan="15"] {
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /* Custom Styling for Pre Drive, Tester, Static, and Shower */
+        td[colspan="2"] select,
+        td[colspan="2"] input {
+            text-align: center;
+            background-color: #e6f0fa;
+            /* Light background inside cells to match form */
+        }
+
+        /* Style for final OK date input */
+        td[colspan="2"] input[type="date"] {
+            background-color: #fff;
+            border: 1px solid #1f4f82;
+            padding: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/logout">
+        <button
+            style="height: 50px;border: none;border-radius: 7px;  width: 85px; background-color: #1f4f82; color: #e6f0fa; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size:smaller">
+            LOGOUT
+        </button>
+    </a>
+    <form action="/submit_data" method="post">
+
+        <center>
+            <h2>VEHICLE HISTORY CARD</h2>
+            <h3>Vehicle Quality Assurance</h3>
+        </center>
+
+        <table>
+            <tr>
+                <td>Model Sis</td>
+                <td colspan="2"><input type="text" id="model" name="model" required></td>
+                <td>CCR NO</td>
+                <td colspan="2"><input type="text" id="CCR" name="ccr" required></td>
+                <td>Engine Type</td>
+                <td colspan="2"><input type="text" id="engine_type" name="engine_type" required></td>
+                <td>Body color</td>
+                <td colspan="2"><input type="text" id="body_color" name="body_color" required></td>
+                <td>OBL/WWL</td>
+                <td colspan="2"><input type="text" id="obl" name="obl" required></td>
+            </tr>
+            <tr>
+                <td>Shift</td>
+                <td colspan="2">
+                    <select name="shift" required>
+                        <option>--</option>
+                        <option value="I">I</option>
+                        <option value="II">II</option>
+                        <option value="III">III</option>
+                    </select>
+                </td>
+                <td>Group</td>
+                <td colspan="2">
+                    <select name="group" required>
+                        <option>--</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">VIN No</td>
+                <td colspan="2"><input type="text" name="vin" required></td>
+                <td colspan="2">Trim Date</td>
+                <td colspan="2"><input type="date" name="trim_date" required></td>
+                <td colspan="2">DESTINATION</td>
+                <td colspan="2"><input type="text" name="destination" required></td>
+                <td colspan="2">INT COLOR</td>
+                <td colspan="2"><input type="text" name="int_color" required></td>
+            </tr>
+        </table>
+
+        <br><br>
+
+        <table border="2">
+            <thead>
+                <tr>
+                    <th colspan="15">VEHICLE INSPECTION PROCESS - FINAL CONFIRMATION</th>
+                </tr>
+                <tr>
+                    <th colspan="15">VQA</th>
+                </tr>
+            </thead>
+            <tr>
+                <td colspan="2">Pre drive 1</td>
+                <td colspan="2">
+                    <select name="pre_drive_1" required>
+                        <option>--</option>
+                        <option>OK</option>
+                        <option>NG</option>
+                    </select>
+                    <br><br>
+                    <input type="text" placeholder="Enter the description" name="pre_drive_1_desc" required>
+                </td>
+                <td colspan="2">Tester</td>
+                <td colspan="2">
+                    <select name="tester" required>
+                        <option>--</option>
+                        <option>OK</option>
+                        <option>NG</option>
+                    </select>
+                    <br><br>
+                    <input type="text" placeholder="Enter the description" name="tester_desc" required>
+                </td>
+                <td colspan="2">Static</td>
+                <td colspan="2">
+                    <select name="static" required>
+                        <option>--</option>
+                        <option>OK</option>
+                        <option>NG</option>
+                    </select>
+                    <br><br>
+                    <input type="text" placeholder="Enter the description" name="static_desc" required>
+                </td>
+                <td colspan="2">Shower</td>
+                <td colspan="2">
+                    <select name="shower" required>
+                        <option>--</option>
+                        <option>OK</option>
+                        <option>NG</option>
+                    </select>
+                    <br><br>
+                    <input type="text" placeholder="Enter the description" name="shower_desc" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Dynamic</td>
+                <td colspan="2">
+                    <select name="dynamic" required>
+                        <option>--</option>
+                        <option>OK</option>
+                        <option>NG</option>
+                    </select>
+                    <br><br>
+                    <input type="text" placeholder="Enter the description" name="dynamic_desc" required>
+                </td>
+                <td colspan="2">PESD sample</td>
+                <td colspan="2">
+                    <select name="pesd_sample" required>
+                        <option>--</option>
+                        <option>OK</option>
+                        <option>NG</option>
+                    </select>
+                    <br><br>
+                    <input type="text" placeholder="Enter the description" name="pesd_sample_desc" required>
+                </td>
+
+                <td colspan="2">Temp OK</td>
+                <td colspan="2">
+                    <select name="temp_ok" required>
+                        <option>--</option>
+                        <option>OK</option>
+                        <option>NG</option>
+                    </select>
+                    <br><br>
+                    <input type="text" placeholder="Enter the description" name="temp_ok_desc" required>
+                </td>
+                <td colspan="2">Kanken</td>
+                <td colspan="2">
+                    <select name="kanken" required>
+                        <option>--</option>
+                        <option>OK</option>
+                        <option>NG</option>
+                    </select>
+                    <br><br>
+                    <input type="text" placeholder="Enter the description" name="kanken_desc" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="14">Final OK Date</td>
+                <td colspan="2"><input type="date" name="final_ok_date" required></td>
+            </tr>
+
+            <thead>
+                <tr>
+                    <th colspan="15">FSTR CONFIRMATION</th>
+                </tr>
+                <tr>
+                    <th colspan="15">FSTR</th>
+                </tr>
+            </thead>
+            <tr>
+                <td colspan="2">Pre drive 1</td>
+                <td colspan="2">
+                    <select name="fstr_pre_drive_1" required>
+                        <option>--</option>
+                        <option>OK</option>
+                        <option>NG</option>
+                    </select>
+                    <br><br>
+                    <input type="text" placeholder="Enter the description" name="fstr_pre_drive_1_desc" required>
+                </td>
+                <td colspan="2">Tester</td>
+                <td colspan="2">
+                    <select name="fstr_tester" required>
+                        <option>--</option>
+                        <option>OK</option>
+                        <option>NG</option>
+                    </select>
+                    <br><br>
+                    <input type="text" placeholder="Enter the description" name="fstr_tester_desc" required>
+                </td>
+                <td colspan="2">Static</td>
+                <td colspan="2">
+                    <select name="fstr_static" required>
+                        <option>--</option>
+                        <option>OK</option>
+                        <option>NG</option>
+                    </select>
+                    <br><br>
+                    <input type="text" placeholder="Enter the description" name="fstr_static_desc" required>
+                </td>
+                <td colspan="2">Shower</td>
+                <td colspan="2">
+                    <select name="fstr_shower" required>
+                        <option>--</option>
+                        <option>OK</option>
+                        <option>NG</option>
+                    </select>
+                    <br><br>
+                    <input type="text" placeholder="Enter the description" name="fstr_shower_desc" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Dynamic</td>
+                <td colspan="2">
+                    <select name="fstr_dynamic" required>
+                        <option>--</option>
+                        <option>OK</option>
+                        <option>NG</option>
+                    </select>
+                    <br><br>
+                    <input type="text" placeholder="Enter the description" name="fstr_dynamic_desc" required>
+                </td>
+                <td colspan="2">PJI LABEL</td>
+                <td colspan="10">
+                    <input type="text" placeholder="Enter the description" name="fstr_PJI_desc" required>
+                </td>
+
+            </tr>
+
+        </table>
+        <center>
+            <% if (typeof message !=='undefined' ) { %>
+                <p style="color: rgb(0, 0, 0); font-size: larger; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                    <%= message %>
+                </p> <!-- Display the message here -->
+                <% } %>
+        </center>
+
+        <center>
+            <button type="submit"
+                style="height: 50px;border: none;border-radius: 7px;  width: 85px; background-color: #1f4f82; color: #e6f0fa; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size:smaller">
+                SUBMIT
+            </button>
+        </center>
+
+    </form>
+</body>
+
+</html>

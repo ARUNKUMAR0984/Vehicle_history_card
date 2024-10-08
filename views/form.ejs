@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+  <h2>VEHICLE HISTORY CARD</h2>
+  <h3>Vehicle Quality Assurance</h3>
+
+  <!-- Top Section of the Form -->
+  <table border="1">
+    <tr>
+      <td>MODEL SIS</td>
+      <td><input type="text" id="model" name="model"></td>
+      <td>CCR NO</td>
+      <td><input type="text" id="ccr" name="ccr"></td>
+      <td>OBL/WWL</td>
+      <td>
+        <select id="obl" name="obl">
+          <option value="">--</option>
+          <option value="a">A</option>
+          <option value="b">B</option>
+          <option value="c">C</option>
+          <option value="d">D</option>
+        </select>
+      </td>
+      <td>SHIFT/GROUP</td>
+      <td>
+        <select id="shift" name="shift">
+          <option value="">--</option>
+          <option value="a">A</option>
+          <option value="b">B</option>
+          <option value="c">C</option>
+          <option value="d">D</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>VIN NO</td>
+      <td><input type="text" id="vin" name="vin"></td>
+      <td>TRIM IN DATE</td>
+      <td><input type="date" id="trim" name="trim"></td>
+      <td>ENG TYPE</td>
+      <td>
+        <select id="eng" name="eng">
+          <option value="">--</option>
+          <option value="a">A</option>
+          <option value="b">B</option>
+          <option value="c">C</option>
+          <option value="d">D</option>
+        </select>
+      </td>
+      <td>BODY COLOR</td>
+      <td>
+        <select id="body" name="body">
+          <option value="">--</option>
+          <option value="a">A</option>
+          <option value="b">B</option>
+          <option value="c">C</option>
+          <option value="d">D</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>DESTINATION</td>
+      <td><input type="text" id="dest" name="dest"></td>
+      <td>INT COLOR</td>
+      <td><input type="text" id="int" name="int"></td>
+    </tr>
+  </table>
+
+  <h3>VEHICLE INSPECTION PROCESS - FINAL CONFIRMATION</h3>
+
+  <!-- Final Confirmation Section -->
+  <table border="1">
+    <tr>
+      <th></th>
+      <th colspan="2">Pre Drive 1</th>
+      <th colspan="4">FSTR CONFIRMATION</th>
+      <th>PJI LABEL</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Tester</th>
+      <th>Static</th>
+      <th>Tester</th>
+      <th>Static</th>
+      <th>Shower</th>
+      <th>Dynamic</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>FSTR</td>
+      <td><input type="checkbox" id="pd1t" name="pd1t"></td>
+      <td><input type="checkbox" id="pd1s" name="pd1s"></td>
+      <td><input type="checkbox" id="fst" name="fst"></td>
+      <td><input type="checkbox" id="fsts" name="fsts"></td>
+      <td><input type="checkbox" id="fssh" name="fssh"></td>
+      <td><input type="checkbox" id="fsd" name="fsd"></td>
+      <td><input type="text" id="pji" name="pji"></td>
+    </tr>
+    <tr>
+      <td>OK</td>
+      <td><input type="checkbox" id="pd1to" name="pd1to"></td>
+      <td><input type="checkbox" id="pd1so" name="pd1so"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>NG</td>
+      <td><input type="checkbox" id="pd1tn" name="pd1tn"></td>
+      <td><input type="checkbox" id="pd1sn" name="pd1sn"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <!-- PESD INSPECTION AND FINAL SEAL SECTION -->
+  <h3>PESD INSPECTION</h3>
+  <table border="1">
+    <tr>
+      <td>Shower</td>
+      <td><input type="checkbox" id="shower" name="shower"></td>
+      <td>Dynamic</td>
+      <td><input type="checkbox" id="dynamic" name="dynamic"></td>
+      <td>FST</td>
+      <td><input type="checkbox" id="fst2" name="fst2"></td>
+      <td>PESD FINAL SEAL</td>
+      <td><input type="checkbox" id="final_seal" name="final_seal"></td>
+    </tr>
+  </table>
+
+  <!-- Preview Section -->
+  <div class="preview">
+    <h3>Preview of Vehicle History Card</h3>
+    <table>
+      <tr>
+        <td>MODEL SIS:</td>
+        <td id="previewModel"></td>
+        <td>CCR NO:</td>
+        <td id="previewCcr"></td>
+        <td>OBL/WWL:</td>
+        <td id="previewObl"></td>
+        <td>SHIFT/GROUP:</td>
+        <td id="previewShift"></td>
+      </tr>
+      <tr>
+        <td>VIN NO:</td>
+        <td id="previewVin"></td>
+        <td>TRIM IN DATE:</td>
+        <td id="previewTrim"></td>
+        <td>ENG TYPE:</td>
+        <td id="previewEng"></td>
+        <td>BODY COLOR:</td>
+        <td id="previewBody"></td>
+      </tr>
+      <tr>
+        <td>DESTINATION:</td>
+        <td id="previewDest"></td>
+        <td>INT COLOR:</td>
+        <td id="previewInt"></td>
+        <td>PJI LABEL:</td>
+        <td id="previewPji"></td>
+        <td colspan="2"></td>
+      </tr>
+      <tr>
+        <td>Pre Drive 1 OK:</td>
+        <td colspan="7" id="previewPreDrive1Ok"></td>
+      </tr>
+      <tr>
+        <td>Pre Drive 1 NG:</td>
+        <td colspan="7" id="previewPreDrive1Ng"></td>
+      </tr>
+      <tr>
+        <td>PESD Inspection:</td>
+        <td colspan="7" id="previewPesd"></td>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    // Function to update preview
+    function updatePreview() {
+      document.getElementById('previewModel').innerText = document.getElementById('model').value;
+      document.getElementById('previewCcr').innerText = document.getElementById('ccr').value;
+      document.getElementById('previewObl').innerText = document.getElementById('obl').value;
+      document.getElementById('previewShift').innerText = document.getElementById('shift').value;
+      document.getElementById('previewVin').innerText = document.getElementById('vin').value;
+      document.getElementById('previewTrim').innerText = document.getElementById('trim').value;
+      document.getElementById('previewEng').innerText = document.getElementById('eng').value;
+      document.getElementById('previewBody').innerText = document.getElementById('body').value;
+      document.getElementById('previewDest').innerText = document.getElementById('dest').value;
+      document.getElementById('previewInt').innerText = document.getElementById('int').value;
+      document.getElementById('previewPji').innerText = document.getElementById('pji').value;
+
+      const preDrive1Ok = document.getElementById('pd1to').checked ? 'Yes' : 'No';
+      const preDrive1Ng = document.getElementById('pd1tn').checked ? 'Yes' : 'No';
+      const pesd = document.getElementById('final_seal').checked ? 'Passed' : 'Not Passed';
+
+      document.getElementById('previewPreDrive1Ok').innerText = preDrive1Ok;
+      document.getElementById('previewPreDrive1Ng').innerText = preDrive1Ng;
+      document.getElementById('previewPesd').innerText = pesd;
+    }
+
+    // Add event listeners to update preview when inputs change
+    document.querySelectorAll('input[type="text"], input[type="date"], select, input[type="checkbox"]').forEach(input => {
+      input.addEventListener('change', updatePreview);
+    });
+
+    // Initial update of preview
+    updatePreview();
+  </script>
+
+</body>
+
+</html>
