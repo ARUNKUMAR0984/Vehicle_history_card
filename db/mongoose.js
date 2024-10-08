@@ -87,7 +87,55 @@ const vehicleSchema = new mongoose.Schema({
       pji_sample: {
           description: { type: String }
       }
-  }
+  },
+  DynamicInspection:{
+    inspected_by: { type: String, required: false },
+  static_check: { type: String, required: false },
+  ltt: { type: String, required: false },
+  concern_description: { type: String, required: false },
+  repair_details: { type: String, required: false },
+  repair_seal: { type: String, required: false },
+  vqa_seal: { type: String, required: false },
+  },
+  pesd_inspection: {
+    concern_description: { type: String, required: false },
+    repair_details: { type: String, required: false },
+    prod_seal: { type: String, required: false },
+    vqa_seal: { type: String, required: false },
+  },
+
+  temp_ok: {
+    concern_description: { type: String, required: false },
+    repair_details: { type: String, required: false },
+    prod_seal: { type: String, required: false },
+    vqa_seal: { type: String, required: false },
+  },
+
+  final_ok_check: {
+    odo_meter: { type: String, required: false },
+    wax: { type: String, required: false },
+    bcm_siw: { type: String, required: false },
+    audio: { type: String, required: false },
+    battery: { type: String, required: false },
+    concern_description: { type: String, required: false },
+    repair_details: { type: String, required: false },
+    prod_seal: { type: String, required: false },
+    vqa_seal: { type: String, required: false },
+  },
+
+  qa_sampling: {
+    concern_description: { type: String, required: false },
+    repair_details: { type: String, required: false },
+    repair_seal: { type: String, required: false },
+    vqa_seal: { type: String, required: false },
+  },
+
+  other_description: {
+    concern_description: { type: String, required: false },
+    repair_details: { type: String, required: false },
+    prod_seal: { type: String, required: false },
+    vqa_seal: { type: String, required: false },
+  },
 });
 
 const userSchema = new mongoose.Schema({
