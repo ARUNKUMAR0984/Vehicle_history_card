@@ -25,18 +25,7 @@ app.get('/login', (req, res) => {
 
 app.get('/logout', (req, res) => {
   // Destroy the session
-  req.session.destroy(err => {
-      if (err) {
-          console.error('Session destruction failed:', err);
-          return res.status(500).send('Could not log out. Please try again later.');
-      }
-
-      // Set headers to prevent caching
-      res.set('Cache-Control', 'no-store');
-
-
-      res.redirect('/login');
-  });
+  res.render('Login');
 });
 
 0
